@@ -1,0 +1,25 @@
+{
+  "name": "randnumgen",
+  "version": "1.0.0",
+  "description": "This application generates unique random numbers from 1-10000",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregng14/randnumgen.git"
+  },
+  "author": "Greg Ng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregng14/randnumgen/issues"
+  },
+  "homepage": "https://github.com/gregng14/randnumgen#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "hbs": "^4.0.1"
+  }
+}
