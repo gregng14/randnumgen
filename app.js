@@ -1,20 +1,27 @@
-var express = require('express'),
-    path = require('path');
-var bodyParser = require('body-parser');
-//create our express app
-var app = express();
-//setup our app to use handlebars.js for templating
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, 'views'));
+const generateRandomNumbers = () => {
+    const numList = []; // array for random numbers
+    const max = 10000;
+    const min = 1;
+    let increment = 0;
+    let num;
+    let prevNum;
 
-//add some standard express middleware
-app.use(bodyParser.json());
+    // generate a array of numbers form 1 to 10000
+    for (i = 0; i < max; i++) {
+        numList[i] = i + 1;
+    }
 
-//routes
-app.get('/', function(req, res) {
-    res.render('index');
-});
+    while (increment < max) {
+        num = Math.floor(Math.random() * max);
+        prevNum = numList[num];
+        numList[num] = numList[increment];
+        numList[increment] = prevNum;
+        increment++;
+    }
+    return numList;
+}
 
-//have our app listen on port 3000
-app.listen(3000);
-console.log('Your app is now running at: http://127.0.0.1:3000/');
+const numList = generateRandomNumbers();
+const numSet = new Set(numList);
+numList.forEach(num => console.log(num));
+console.assert(numSet.size === 10000, 'List of randomly generated numbers is not unique');
