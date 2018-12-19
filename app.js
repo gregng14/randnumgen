@@ -4,7 +4,7 @@ const generateRandomNumbers = () => {
     let num;
     let prevNum;
 
-    // generate a array of numbers form 1 to 10000
+    // generate an array of numbers form 1 to 10000
     for (i = 0; i < max; i++) {
         numList[i] = i + 1; // start at 1
     }
