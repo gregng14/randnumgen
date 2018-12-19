@@ -20,6 +20,6 @@ const generateRandomNumbers = () => {
 }
 
 const numList = generateRandomNumbers();
-const numSet = new Set(numList);
 numList.forEach(num => console.log(num));
+const numSet = new Set(numList);
 console.assert(numSet.size === 10000, 'List of randomly generated numbers is not unique');
