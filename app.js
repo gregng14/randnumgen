@@ -30,14 +30,9 @@ console.log(numList)
 // used for testing
 // mocks randInt(max)
 function randIntMock(max) {
-    const staticArray = [0,0,1,1,4,3]
+    const staticArray = [0,0,1,1,4,3,6,5,2,3]
     return staticArray[max];
 }
 
-const numTestList = generateRandomNumbers(6, randIntMock);
-console.assert(numTestList.toString() === '3,1,6,2,5,4', `List should be 3,1,6,2,5,4, result is ${numTestList}`)
-numTestList.forEach(num => {
-    console.assert( 0 < num <= 6, `${num} is not a number between 1 and 6`);
-});
-const numSet = new Set(numTestList);
-console.assert(numSet.size === 6, 'List of randomly generated numbers is not unique');
+const numTestList = generateRandomNumbers(10, randIntMock);
+console.assert(numTestList.toString() === '9,1,8,2,5,10,7,6,3,4', `List should be 9,1,8,2,5,10,7,6,3,4 result is ${numTestList}`)
