@@ -35,4 +35,4 @@ function randIntMock(max) {
 }
 
 const numTestList = generateRandomNumbers(10, randIntMock);
-console.assert(numTestList.toString() === '9,1,8,2,5,10,7,6,3,4', `List should be 9,1,8,2,5,10,7,6,3,4 result is ${numTestList}`)
+console.assert(numTestList.toString() === '9,1,8,2,5,10,7,6,3,4', `Result: ${numTestList} does not match expected: 9,1,8,2,5,10,7,6,3,4`)
